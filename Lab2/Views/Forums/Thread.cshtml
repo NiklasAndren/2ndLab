@@ -1,0 +1,32 @@
+﻿@using Lab2.ViewModels
+@using Lab2.Models.SessionManager
+@model ThreadViewModel
+@{
+        ViewBag.Title = "Index";
+}
+
+ @Html.Partial("_CreatePostPartial")
+
+<h2>@Html.LabelFor(t => t.Thread.Title): @Model.Thread.Title</h2>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+    <th>
+        @Html.LabelFor(t => t.Posts.FirstOrDefault().Title)
+    </th>
+    <th>
+        @Html.LabelFor(b => b.Posts.FirstOrDefault().Body)
+    </th>
+    <th>
+        @Html.LabelFor(c => c.Posts.FirstOrDefault().CreateDate)
+    </th>
+</tr>
+    @foreach (var post in Model.Posts)
+    {
+    <tr>
+        <td>@Html.DisplayFor(t => post.Title)</td>
+        <td>@Html.DisplayFor(b => post.Body)</td>
+        <td>@Html.DisplayFor(c => post.CreateDate)</td>
+    </tr>
+    }
+</table>

@@ -1,0 +1,6 @@
+﻿<p>If you experience any problems, please contact: </p>
+
+@foreach (var admin in Lab2.Models.Repositories.Repository.Instance.GetSiteAdmins())
+{
+    @admin.UserName <br />
+}

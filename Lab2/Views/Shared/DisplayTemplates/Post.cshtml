@@ -1,0 +1,6 @@
+﻿@model Lab2.Models.Entities.Post
+<ul class="post">
+    <li class="postfield">@Html.ActionLink(Html.DisplayFor(p => p.TitleShort).ToString(), "Details", "Posts", new {id = Model.ID}, null)</li>
+    <li class="postfield body">@Html.DisplayFor(p => p.BodyShort)</li>
+    <li class="postfield">@Html.DisplayFor(p => p.CreateDate)</li>
+</ul>

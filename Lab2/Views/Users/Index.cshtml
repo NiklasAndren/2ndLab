@@ -1,0 +1,38 @@
+﻿@using Lab2.Models.Entities
+@using Lab2.Models.SessionManager
+@{
+    ViewBag.Title = "UserIndex";
+    List<User> users = ViewBag.Users;
+}
+
+<h2>Users</h2>
+
+<p>
+    @if (SessionManager.CurrentUser != null && SessionManager.CurrentUser.Type == Lab2.Models.Entities.User.UserType.Admin) { 
+        @Html.ActionLink("Create New User", "Create", "Users")
+    }
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Full Name
+            </th>
+            <th>
+                Username
+            </th>
+        </tr>
+    </thead>
+@foreach (var user in users)
+{
+    <tr>
+        <td>
+            @Html.ActionLink(user.UserName, "Details", "Users", new {id = user.UserName }, null)
+        </td>
+        <td>
+            @user.FullName
+        </td>
+    </tr>
+}
+</table>

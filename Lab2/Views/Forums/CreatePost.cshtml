@@ -1,0 +1,28 @@
+﻿@using Lab2.ViewModels
+@model Lab2.Models.Entities.Post
+@{
+    ViewBag.Title = "CreatePost";
+}
+
+<h2>Create New Post</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <p>
+            <span>@Html.LabelFor(t => t.Title)</span><br />
+            <span>@Html.EditorFor(t => t.Title)</span>
+            <span>@Html.ValidationMessageFor(m => m.Title)</span>
+        </p>
+        <p>
+            <span>@Html.LabelFor(b => b.Body)</span><br />
+            <span>@Html.EditorFor(b => b.Body)</span>
+            <span>@Html.ValidationMessageFor(m => m.Body)</span>
+            <span>@Html.HiddenFor(i => i.ThreadID)</span>
+        </p>
+    </div>
+    
+   <div>
+         <input type="submit" value="Submit" id="createpost" />
+   </div>
+}

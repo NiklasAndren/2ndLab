@@ -1,0 +1,17 @@
+﻿@model Lab2.Models.Entities.User
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create New User</h2>
+@{ Html.EnableClientValidation(true); }
+@using (Html.BeginForm()) { 
+<div>
+    <p>
+        <span>@Html.LabelFor(u => u.UserName)</span>@Html.EditorFor(u => u.UserName) <span>@Html.ValidationMessageFor(u => u.UserName)</span>
+    </p>
+</div>
+<div>
+    <input type="submit" value="Create" />
+</div>
+}

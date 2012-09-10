@@ -1,0 +1,12 @@
+﻿@model Lab2.ViewModels.UserDetailsViewModel
+@{
+    ViewBag.Title = "UserDetails";
+}
+
+<h2>User Details</h2>
+@Html.Partial("_UserDetailsPartial", Model.User)
+
+<div class="detailspanel">
+    <h4>Latest Posts:</h4>
+    @Html.DisplayFor(m => m.Posts)
+</div>
